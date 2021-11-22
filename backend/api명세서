@@ -1,0 +1,138 @@
+- url "/api/sendintake"
+   - method
+        - post
+   - form parameter
+        - "data": [
+                {
+                    -intake //이전의 num과 동일
+                    -name //이전의 medicine name과 동일
+                    -weight
+                }
+            ]
+        }
+   - return type
+       - success
+          {
+              "status": 200
+              "success": True,
+              "data": {
+                        "intake": [
+                            {
+                                "word_id": "2",
+                                "word_name": "name2",
+                                "volume" : 12.312,
+                                "unit": 'mg',
+                                "isHeavyMetal", true,
+                                "percentage": 30,
+                                "heavy_volume": 0
+                            },
+                            {
+                                "word_id": "1",
+                                "word_name": "name1",
+                                "volume" : 12.312,
+                                "unit": 'mg',
+                                "isHeavyMetal", false,
+                                "percentage": 0,
+                                "heavy_volume": 0
+                            }
+                        ]
+                }
+        }
+
+
+
+
+
+- url "/api/sendfile"
+   - method
+        - post
+   - form parameter
+        - "data": [
+            {
+                -formData 
+            }
+        ]
+    - return type
+        - success
+            {
+                "status": 200
+                "success": True,
+                "data": [
+                    {
+                        "name": "A",
+                        "intake": [
+                            {
+                                "word_id": "2",
+                                "word_name": "name2",
+                                "volume" : 12.312,
+                                "unit": 'mg',
+                                "isHeavyMetal": true,
+                                "percentage": 30,
+                                "heavy_volume": 0.0123
+                            }
+                            {
+                                "word_id": "1",
+                                "word_name": "name1",
+                                "volume" : 12.312,
+                                "unit": 'mg',
+                                "isHeavyMetal", false,
+                                "percentage": 0,
+                                "heavy_volume": 0
+                            }
+                        ]
+                    },
+                    {
+                        "name": "B",
+                        "intake": [
+                            {
+                                "word_id": "2",
+                                "word_name": "name2",
+                                "volume" : 12.312,
+                                "unit": 'mg',
+                                "isHeavyMetal", true,
+                                "percentage": 30,
+                                "heavy_volume": 0.0123
+                            },
+                            {
+                                "word_id": "1",
+                                "word_name": "name1",
+                                "volume" : 12.312,
+                                "unit": 'mg',
+                                "isHeavyMetal", false,
+                                "percentage": 0,
+                                "heavy_volume": 0
+                            }
+                        ],
+                    }
+                ]
+            }
+
+
+- url "/api/exportFile"
+   - method
+        - post
+   - form parameter
+        - "data": [
+                    {
+                        "name": "A",
+                        "intake": [
+                            {
+                                "word_id": "2",
+                                "word_name": "name2",
+                                "volume" : 12.312,
+                                "unit": 'mg',
+                                "isHeavyMetal": true,
+                                "percentage": 30
+                            },
+                        ]
+                    },
+        ]
+   - return type
+       - success
+          {
+              "status": 200
+              "success": True,
+              "data": {
+                  csvfile
+                }
+        }
